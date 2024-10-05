@@ -1,10 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Detail</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
     <h1>{{ profile.name }}</h1>
     <p><strong>GitHub:</strong> <a href="{{ profile.github }}">{{ profile.github }}</a></p>
@@ -24,6 +29,5 @@
         <h3>{{ certificate.name }}</h3>
         <p>{{ certificate.certifying_institution.name }}</p>
     {% endfor %}
-    </ul>
 </body>
 </html>
