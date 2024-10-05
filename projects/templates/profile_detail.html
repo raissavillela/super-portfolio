@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Detail</title>
 </head>
-
 <body>
-    <h1>Profile: {{ profile.name }}</h1>
+    <h1>{{ profile.name }}</h1>
     <p><strong>GitHub:</strong> <a href="{{ profile.github }}">{{ profile.github }}</a></p>
     <p><strong>LinkedIn:</strong> <a href="{{ profile.linkedin }}">{{ profile.linkedin }}</a></p>
     <p><strong>Bio:</strong> {{ profile.bio }}</p>
 
     <h2>Projects</h2>
     {% for project in profile.projects.all %}
-        <p>{{ project.name }}</p>
+        <h3>{{ project.name }}</h3>
         <p>{{ project.description }}</p>
         <p>{{ project.keyword }}</p>
         <p>{{ project.key_skill }}</p>
@@ -23,8 +21,9 @@
 
     <h2>Certificates</h2>
     {% for certificate in profile.certificates.all %}
-        <p>{{ certificate.name }}</p3>
+        <h3>{{ certificate.name }}</h3>
         <p>{{ certificate.certifying_institution.name }}</p>
     {% endfor %}
+    </ul>
 </body>
 </html>
